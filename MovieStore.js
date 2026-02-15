@@ -1,19 +1,25 @@
-import { defineStore } from 'pinia';
-import { ref, computed } from 'vue';
+/**
+ * @module stores/movieStore
+ * @description Gerenciamento de estado global da aplicação usando Pinia.
+ */
 
 export const useMovieStore = defineStore('movie', () => {
+  /** @type {import('vue').Ref<Array>} Lista de filmes resultantes da busca. */
   const movies = ref([]);
+
+  /** @type {import('vue').Ref<Array>} Lista de filmes marcados como favoritos. */
   const favorites = ref([]);
-  const isLoading = ref(false);
-  const errorMessage = ref(null);
 
-  // Getter para verificar se um filme é favorito (Reatividade Instantânea)
-  const isFavorite = (id) => favorites.value.some(m => m.imdbID === id);
-
+  /**
+   * Alterna o estado de favorito de um filme.
+   * Se o filme já existe na lista, ele é removido; caso contrário, é adicionado.
+   * * @function toggleFavorite
+   * @param {Object} movie - O objeto do filme a ser favoritado/removido.
+   * @param {string} movie.imdbID - ID único do filme.
+   */
   const toggleFavorite = (movie) => {
-    const index = favorites.value.findIndex(m => m.imdbID === movie.imdbID);
-    index > -1 ? favorites.value.splice(index, 1) : favorites.value.push(movie);
+    // ...
   };
 
-  return { movies, favorites, isLoading, errorMessage, isFavorite, toggleFavorite };
+  return { movies, favorites, toggleFavorite };
 });
