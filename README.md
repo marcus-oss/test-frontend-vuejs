@@ -72,3 +72,4 @@ npm run test:unit
 # Gerar documentação JSDoc
 npm run docs
 
+Desenvolvido com ☕ e Vue.js 
