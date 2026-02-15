@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "docs": "jsdoc -c jsdoc.config.json"
   },
   "dependencies": {
     "axios": "^1.6.0",
@@ -23,6 +24,8 @@
     "eslint": "^8.56.0",
     "eslint-plugin-vue": "^9.20.0",
     "jsdom": "^24.0.0",
+    "jsdoc": "^4.0.2",
+    "jsdoc-minami": "^1.2.0",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
     "vite": "^5.0.10",
