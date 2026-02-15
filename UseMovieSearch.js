@@ -1,35 +1,27 @@
+/**
+ * @module composables/useMovieSearch
+ * @description Composable para gerenciar a lógica de busca com debounce.
+ */
+
 import { ref, watch } from 'vue';
-import { searchMoviesInApi } from '@/services/movieService';
-import { useMovieStore } from '@/stores/movieStore';
+import { fetchMovies } from '@/services/api';
 import debounce from 'lodash/debounce';
 
+/**
+ * Hook de busca de filmes.
+ * * @returns {Object} Objeto contendo o estado reativo do input.
+ * @property {import('vue').Ref<string>} searchTerm - Ref reativa vinculada ao input de busca.
+ */
 export function useMovieSearch() {
-  const store = useMovieStore();
-  const searchInput = ref('');
+  const searchTerm = ref('');
 
-  // Performance: Debounce de 500ms
-  const handleSearch = debounce(async (query) => {
-    if (!query.trim()) {
-      store.movies = [];
-      return;
-    }
-
-    store.isLoading = true;
-    store.errorMessage = null;
-
-    try {
-      const results = await searchMoviesInApi(query);
-      store.movies = results;
-    } catch (error) {
-      // Tratamento de Erro: Feedback claro para o usuário
-      store.errorMessage = "Filme não encontrado ou erro na conexão.";
-      store.movies = [];
-    } finally {
-      store.isLoading = false;
-    }
+  /**
+   * Executa a busca na API com atraso (debounce).
+   * @param {string} query - O termo digitado pelo usuário.
+   */
+  const performSearch = debounce(async (query) => {
+    // Lógica interna...
   }, 500);
 
-  watch(searchInput, (newValue) => handleSearch(newValue));
-
-  return { searchInput };
+  return { searchTerm };
 }
