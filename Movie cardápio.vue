@@ -27,6 +27,16 @@
       <div v-else-if="!loading" class="text-center py-20 bg-gray-900 rounded-xl border border-dashed border-gray-700">
         <p class="text-gray-500">Nenhum filme encontrado. Tente buscar por "Batman" ou "Avengers".</p>
       </div>
+  <template>
+  <div class="p-8 bg-gray-950 min-h-screen text-white">
+    <input v-model="searchInput" placeholder="Busque um filme..." class="..." />
+    <div v-if="store.isLoading" class="text-indigo-400">Buscando filmes...</div>
+    <div v-if="store.errorMessage" class="bg-red-900/20 border border-red-500 p-4 rounded text-red-500">
+      {{ store.errorMessage }}
+    </div>
+    <MovieGrid v-else />
+  </div>
+  </template>  
     </main>
   </div>
 </template>
