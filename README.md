@@ -34,6 +34,17 @@ Este projeto utiliza **JSDoc** com o tema **Minami** para documentar a lógica d
 1.  Rode o comando: `npm run docs`
 2.  Abra o arquivo `docs/index.html` no seu navegador.
 
+-- 
+## Estrutura do Projeto
+src/
+ ├── components/     # Componentes visualmente isolados (UI)
+ ├── composables/    # Lógica reativa reutilizável (Busca/Debounce)
+ ├── services/       # Integração com Axios e OMDb API
+ ├── stores/         # Estado global com Pinia (Filmes e Favoritos)
+ ├── __tests__/      # Testes unitários com Vitest
+
+
+
 ---
 
 ## 🧪 Como Executar o Projeto
