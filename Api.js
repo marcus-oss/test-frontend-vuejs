@@ -12,7 +12,7 @@ import axios from 'axios';
 const api = axios.create({
   baseURL: 'https://www.omdbapi.com/',
   params: {
-    apikey: 'http://www.omdbapi.com/?apiKey=' //chave da api retorna pelo id,
+    apikey: 'http://www.omdbapi.com/?apiKey=' //chave da api que retorna os filmes da api omdb,
   },
 });
 
