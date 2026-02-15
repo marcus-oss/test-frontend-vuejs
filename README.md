@@ -1,42 +1,54 @@
-# test-frontend-vuejs
+# 🎥 MovieWise - Mini Dashboard de Filmes
 
-## 🎥 Projeto: MovieWise - Mini Dashboard de Filmes
+O **MovieWise** é uma aplicação Single Page (SPA) desenvolvida para o teste técnico de Front-end, utilizando o ecossistema mais moderno do **Vue.js 3**. A aplicação permite a busca de filmes em tempo real, exibição de detalhes e gerenciamento de favoritos, com foco total em performance e código limpo.
 
-O objetivo é criar uma aplicação que consuma uma API pública de filmes, permita a busca.
 
-### 🛠️ Requisitos Técnicos
-
-* **Framework:** Vue.js 3 (Composition API preferencialmente).
-* **Gerenciamento de Estado:** Pinia ou `reactive/ref` (para avaliar se ele sabe quando usar cada um).
-* **Estilização:** CSS puro, Tailwind ou SCSS (deixe a escolha do candidato para ver o nível de capricho).
-* **API Sugerida:** [OMDb API](http://www.omdbapi.com/) (Gratuita, requer apenas uma chave simples).
 
 ---
 
-### 📝 O que o candidato deve entregar:
+## 🛠️ Tecnologias e Decisões Técnicas
 
-1. **Busca em Tempo Real:** Um campo de input que busca filmes conforme o usuário digita (bônus se implementar *debounce*).
-2. **Lista de Resultados:** Exibir cards com o poster, título e ano do filme.
-
----
-
-### 📂 Estrutura Sugerida (Para Avaliação)
-
-Observe se o candidato organiza o projeto de forma escalável:
-
-* `src/components/`: Componentes reutilizáveis (MovieCard, SearchBar).
-* `src/composables/`: Lógica de busca ou favoritos extraída.
-* `src/services/`: Configuração do Axios/Fetch.
-* `src/stores/`: Se optar por Pinia.
+- **Vue 3 (Composition API):** Utilizado para uma melhor organização de lógica e reutilização de código.
+- **Vite:** Escolhido como build tool pela sua velocidade superior no desenvolvimento.
+- **Pinia:** Gerenciamento de estado global para garantir que os "Favoritos" sejam persistentes e reativos em toda a aplicação.
+- **Tailwind CSS:** Utilizado para um design moderno, responsivo e suporte nativo ao **Dark Mode**.
+- **JSDoc + Minami Theme:** Documentação técnica das classes e funções, gerando um portal estático para consulta.
+- **Vitest:** Framework de testes unitários integrado ao Vite para garantir a qualidade dos componentes.
 
 ---
 
-### 🧐 Critérios de Avaliação (O que observar)
+## 🚀 Funcionalidades Principais (Critérios de Avaliação)
 
-| Critério | O que demonstra? |
-| --- | --- |
-| **Componentização** | Ele separa a lógica do card da lógica da lista? |
-| **Reatividade** | O estado de "favorito" atualiza instantaneamente na tela? |
-| **Tratamento de Erros** | O que acontece se a API não retornar nada ou falhar? |
-| **Performance** | Ele faz requisições a cada tecla digitada ou usa um atraso (*debounce*)? |
-| **Clean Code** | Nomes de variáveis semânticos e código legível. |
+1.  **Busca com Debounce:** Implementada no composable `useMovieSearch`, aguarda 500ms após a última tecla para disparar a API, economizando recursos e evitando travamentos.
+2.  **Componentização Avançada:** Separação clara entre `MovieCard` (apresentação) e `MovieGrid` (lógica de lista/layout).
+3.  **Tratamento de Erros e Estados:** A interface gerencia estados de `Loading`, `Error` (filme não encontrado ou falha de conexão) e `Empty State`.
+4.  **Reatividade Instantânea:** O botão de favoritos reflete as mudanças imediatamente na UI graças ao estado reativo do Pinia.
+5.  **Clean Code:** Código documentado, variáveis semânticas e separação de responsabilidades (Services, Stores, Composables).
+
+---
+
+## 📖 Documentação Técnica
+
+Este projeto utiliza **JSDoc** com o tema **Minami** para documentar a lógica de negócio. Para visualizar a documentação das classes:
+
+1.  Rode o comando: `npm run docs`
+2.  Abra o arquivo `docs/index.html` no seu navegador.
+
+---
+
+## 🧪 Como Executar o Projeto
+
+### 1. Pré-requisitos
+- Node.js (versão 18 ou superior)
+- Uma chave da [OMDb API](http://www.omdbapi.com/apikey.aspx)
+
+### 2. Instalação
+```bash
+# Clone o repositório
+git clone [https://github.com/seu-usuario/moviewise-dashboard.git](https://github.com/seu-usuario/moviewise-dashboard.git)
+
+# Entre na pasta
+cd moviewise-dashboard
+
+# Instale as dependências
+npm install
