@@ -12,7 +12,7 @@ import axios from 'axios';
 const api = axios.create({
   baseURL: 'https://www.omdbapi.com/',
   params: {
-    apikey: 'http://www.omdbapi.com/?i=12' //chave da api retorna pelo id,
+    apikey: 'http://www.omdbapi.com/?apiKey=' //chave da api retorna pelo id,
   },
 });
 
