@@ -63,3 +63,12 @@ cd moviewise-dashboard
 
 # Instale as dependências
 npm install
+# Iniciar servidor de desenvolvimento
+npm run dev
+
+# Rodar testes unitários
+npm run test:unit
+
+# Gerar documentação JSDoc
+npm run docs
+
