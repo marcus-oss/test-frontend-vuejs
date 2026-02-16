@@ -1,12 +1,12 @@
 <script setup>
 import MovieCard from './MovieCard.vue';
 import { useMovieStore } from '@/stores/movieStore';
-
 const store = useMovieStore();
 </script>
 
+
 <template>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
     <MovieCard 
       v-for="movie in store.movies" 
       :key="movie.imdbID" 
@@ -16,3 +16,8 @@ const store = useMovieStore();
     />
   </div>
 </template>
+
+
+
+
+
