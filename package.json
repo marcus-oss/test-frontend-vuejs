@@ -3,32 +3,34 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "description": "Mini Dashboard de filmes consumindo OMDb API com Vue 3, Pinia e Tailwind CSS",
+  "author": "Seu Nome",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "docs": "jsdoc -c jsdoc.config.json"
+    "docs": "jsdoc -c jsdoc.config.json",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "axios": "^1.6.0",
+    "axios": "^1.6.2",
     "lodash": "^4.17.21",
     "pinia": "^2.1.7",
-    "vue": "^3.4.0"
+    "vue": "^3.4.15"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.0",
-    "@vue/test-utils": "^2.4.3",
-    "autoprefixer": "^10.4.16",
+    "@vitejs/plugin-vue": "^5.0.3",
+    "@vue/test-utils": "^2.4.4",
+    "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
-    "eslint-plugin-vue": "^9.20.0",
+    "eslint-plugin-vue": "^9.20.1",
     "jsdom": "^24.0.0",
     "jsdoc": "^4.0.2",
     "jsdoc-minami": "^1.2.0",
-    "postcss": "^8.4.33",
+    "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
-    "vite": "^5.0.10",
-    "vitest": "^1.2.0"
+    "vite": "^5.0.12",
+    "vitest": "^1.2.2"
   }
 }
